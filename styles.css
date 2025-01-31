@@ -1,5 +1,13 @@
+@font-face {
+    font-family: 'KodeMono';
+    src: url('KodeMono-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* General Styles */
 body {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family:'KodeMono';
     background-color: black;
     margin: 0;
     padding: 0;
@@ -8,6 +16,7 @@ body {
     overscroll-behavior: none;
 }
 
+/* Banner (Navigation Bar) */
 .banner {
     background-color: #501619;
     color: #fff4f1;
@@ -16,20 +25,20 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position:fixed;
-    top:0;
-    width:100vw;
+    position: fixed;
+    top: 0;
+    width: 100vw;
 }
 
-.banner > div{
-    display:flex;
+.banner > div {
+    display: flex;
 }
 
 .banner h1 {
     margin: 0;
     margin-left: 10px;
-    font-size:clamp(20px,1vw,50px);
-    align-self:center;
+    font-size: clamp(20px, 1vw, 50px);
+    align-self: center;
 }
 
 .banner img {
@@ -38,7 +47,7 @@ body {
 }
 
 .banner nav {
-    padding-right:2%;
+    padding-right: 2%;
     display: flex;
     gap: 10px;
 }
@@ -55,35 +64,8 @@ body {
     text-shadow: 0 0 10px #820303, 0 0 20px #ff1a1a;
 }
 
-/*.main-content {
-    text-align: center;
-    margin-top: 50px;
-    padding: 20px;
-}
-
-.main-content h2 {
-    font-size: 2.5em;
-    margin: 0;
-}
-
-.main-content h3 {
-    font-size: 2em;
-    margin: 0;
-}
-
-.main-content p {
-    font-size: 1.2em;
-    margin: 20px 0;
-}
-
-.main-content button {
-    font-size: 1em;
-    padding: 10px 20px;
-    margin: 10px;
-    cursor: pointer;
-}*/
-
-.flex-container {
+/* Main Container for Sections */
+.main-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -91,37 +73,76 @@ body {
     margin-top: 5%;
 }
 
-.flex-container > div {
+/* Each Section is a Separate Flexbox */
+.section-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     color: white;
     margin: 0;
-    padding: 0px;
+    padding: 20px; /* Give some space */
     width: 100%;
     border-radius: 5px;
-    display:flex;
+}
+
+/*
+
+ABOUT SECTION PUT STUFF HERE  
+
+
+*/
+
+
+/* 
+
+SCHEDULE SECTION PUT STUFF HERE 
+
+*/
+
+
+
+/* 
+
+FAQ SECTION GO HERE 
+
+*/
+
+/* 
+
+SPONSORS SECTION GO HERE
+
+*/
+
+
+/* 
+
+RESOURCES SECTION GO HERE
+
+*/
+
+
+/* 
+
+MEET THE TEAM SECTION GO HERE 
+
+*/
+
+/* Footer */
+footer {
+    background-color: #062337;
+    width: 100%;
+    display: flex;
     justify-content: center;
-    flex-direction: column;
+    align-items: center;
+    margin-top: auto;
+    padding: 15px;
+    /* position: absolute;*/
+    /* bottom: 0; */
 }
 
-.flex-container > div h2 {
-    margin-top: 0;
-    align-self: center;
-    
-}
-
-.flex-container > div p{
-    align-self: center;
-}
-
-footer{
-    background-color:#062337;
-    width:100%;
-    display:flex;
-    justify-content: center;
-    position:absolute;
-    bottom:0;
-}
-
-footer > h1{
-    color:white;
+footer > h1 {
+    color: white;
+    font-size: 1rem;
     align-self: center;
 }
