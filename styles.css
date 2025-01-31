@@ -5,46 +5,57 @@ body {
     padding: 0;
     color: white;
     overflow-x: hidden; /* Prevent horizontal scrolling */
+    overscroll-behavior: none;
 }
 
 .banner {
     background-color: #501619;
     color: #fff4f1;
-    padding: 15px;
+    padding: 1%;
     text-align: left;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position:fixed;
+    top:0;
+    width:100vw;
+}
+
+.banner > div{
+    display:flex;
 }
 
 .banner h1 {
     margin: 0;
     margin-left: 10px;
+    font-size:clamp(20px,1vw,50px);
+    align-self:center;
 }
 
 .banner img {
-    height: 60px; /* Adjust the height as needed */
+    height: 5%; /* Adjust the height as needed */
+    width: 5%;
 }
 
 .banner nav {
+    padding-right:2%;
     display: flex;
     gap: 10px;
 }
 
-.banner nav button {
-    background-color: #fff4f1;
-    color: #501619;
+.banner nav a {
     border: none;
-    padding: 10px 15px;
+    padding: 1px 5px;
     cursor: pointer;
     font-size: 1em;
 }
 
-.banner nav button:hover {
-    background-color: #d4c4c4;
+.banner nav a:hover {
+    color: #ff4d4d; /* Glowing red text */
+    text-shadow: 0 0 10px #820303, 0 0 20px #ff1a1a;
 }
 
-.main-content {
+/*.main-content {
     text-align: center;
     margin-top: 50px;
     padding: 20px;
@@ -70,24 +81,47 @@ body {
     padding: 10px 20px;
     margin: 10px;
     cursor: pointer;
-}
+}*/
 
 .flex-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    padding: 0px;
+    margin-top: 5%;
 }
 
 .flex-container > div {
-    background-color: #333;
     color: white;
-    margin: 10px;
-    padding: 20px;
-    width: 80%;
+    margin: 0;
+    padding: 0px;
+    width: 100%;
     border-radius: 5px;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .flex-container > div h2 {
     margin-top: 0;
+    align-self: center;
+    
+}
+
+.flex-container > div p{
+    align-self: center;
+}
+
+footer{
+    background-color:#062337;
+    width:100%;
+    display:flex;
+    justify-content: center;
+    position:absolute;
+    bottom:0;
+}
+
+footer > h1{
+    color:white;
+    align-self: center;
 }
