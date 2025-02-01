@@ -16,9 +16,68 @@ body {
     overscroll-behavior: none;
 }
 
+.title-section {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: space-between; /* Center vertically */
+    text-align: center;
+    padding: 50px 20px;
+    color: #ff4d4d;
+    text-shadow: 0 0 10px #ff1a1a, 0 0 20px #820303;
+    gap: 30; /* Space between text and buttons */
+}
+
+.title-content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.title-content p {
+    font-size: 2.0rem;
+    color: #ddd; /* Slightly softer white */
+    margin-top: 10px;
+}
+
+/* buttons in title Section */
+.title-buttons {
+    display: flex;
+    gap: 15px; /* Space between buttons */
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    color: white;
+    background-color: #ff4d4d;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s;
+    text-shadow: 0 0 5px #820303;
+}
+
+.btn:hover {
+    background-color: #ff1a1a;
+    text-shadow: 0 0 10px #ff4d4d;
+}
+
+.btn.secondary {
+    background-color: transparent;
+    border: 2px solid #ff4d4d;
+}
+
+.btn.secondary:hover {
+    background-color: #ff4d4d;
+    color: black;
+}
+
+
 /* Banner (Navigation Bar) */
+
 .banner {
-    background-color: #501619;
+    /* background-color: #501619; */
     color: #fff4f1;
     padding: 1%;
     text-align: left;
@@ -51,6 +110,8 @@ body {
     display: flex;
     gap: 10px;
 }
+
+
 
 .banner nav a {
     border: none;
