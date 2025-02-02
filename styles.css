@@ -77,7 +77,7 @@ body {
 /* Banner (Navigation Bar) */
 
 .banner {
-    /* background-color: #501619; */
+/* background-color: #501619; */
     color: #fff4f1;
     padding: 1%;
     text-align: left;
@@ -110,7 +110,6 @@ body {
     display: flex;
     gap: 10px;
 }
-
 
 
 .banner nav a {
@@ -194,16 +193,24 @@ footer {
     background-color: #062337;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     margin-top: auto;
     padding: 15px;
-    /* position: absolute;*/
-    /* bottom: 0; */
 }
 
 footer > h1 {
     color: white;
     font-size: 1rem;
     align-self: center;
+}
+
+#logica_logo{
+    height:clamp(100px,1vw,500px); /* clamp(smallest, change rate, largest)*/
+    width:clamp(100px,1vw,500px);
+}
+
+#wicys_logo{
+    height:clamp(100px,1vw,500px);
+    width:clamp(120px,1vw,500px);
 }
