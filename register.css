@@ -1,0 +1,99 @@
+@font-face {
+    font-family: 'KodeMono';
+    src: url('KodeMono-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* General Styles */
+html{
+    height:100%;
+}
+
+body {
+    font-family:'KodeMono';
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    color: white;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overscroll-behavior: none;
+}
+
+header{
+    padding:2%;
+    display:flex;
+}
+
+header>div>a{
+    text-decoration: none;
+    font-size: large;
+}
+
+section{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+
+section > div{
+    border:2px,solid,red;
+    align-self: center;
+    border-radius: 5%;
+    padding:2%;
+    width:30%;
+    box-shadow: 0 0 10px #ff1a1a, 0 0 20px #820303;
+}
+
+section > div > h1{
+    justify-self: center;
+}
+
+.textInput{
+    display:flex;
+    flex-direction: column;
+}
+input{
+    width:65%;
+    border-radius: 10px;
+    color:black;
+    /* justify-self: center; */
+}
+
+h2{
+    font-size: clamp(10%,1vw,100%);
+    align-self: flex-end;
+}
+
+h4{
+    color:red;
+}
+#buttonDiv{
+    margin-top: 20%;
+    display:flex;
+    padding:2%;
+    justify-content: center;
+    
+}
+button{
+    font-family: 'KodeMono';
+    color:white;
+    box-shadow: 0 0 10px #ff1a1a, 0 0 20px #820303;
+    border:2px,solid, #820303;
+    background-color: #000000;
+    border-radius: 90px;
+    height:100%;
+    width:60%;
+}
+
+button:hover{
+    transition:0.5s;
+    color:black;
+    border-color: #00000000;
+    background-color: #ff1a1a;
+}
+
+.title{
+    display:inline-flex;
+    width:60%;
+}
