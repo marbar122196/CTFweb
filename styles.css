@@ -56,6 +56,7 @@ body {
     text-decoration: none;
     transition: 0.3s;
     text-shadow: 0 0 5px #820303;
+    cursor: pointer; /* added this so its clear theyre buttons */ 
 }
 
 .btn:hover {
@@ -87,10 +88,19 @@ body {
     position: fixed;
     top: 0;
     width: 100vw;
+    z-index: 100; /* I added this because it keeps the header on top of everything else */ 
 }
 
 .banner > div {
     display: flex;
+}
+
+/* glow on the flame logo */ 
+.banner img:hover {
+    filter: drop-shadow(0 0 10px #820303)
+            drop-shadow(0 0 20px #ff1a1a)
+            drop-shadow(0 0 30px #ff3c3c);
+    transition: filter 0.9s ease-in-out;
 }
 
 .banner h1 {
@@ -101,8 +111,9 @@ body {
 }
 
 .banner img {
-    height: 5%; /* Adjust the height as needed */
-    width: 5%;
+    height: 5vh; /* I changed this because the 5% was making it super tiny on small window */
+    width: auto;
+    cursor: pointer; /* so we can add a link back to the homepage into this */ 
 }
 
 .banner nav {
@@ -129,21 +140,23 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding: 0px;
     margin-top: 5%;
 }
 
 /* Each Section is a Separate Flexbox */
 .section-container {
+    /* border:2px,solid,brown; */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     color: white;
     margin: 0;
-    padding: 20px; /* Give some space */
-    width: 100%;
-    border-radius: 5px;
+    /*padding:20px;*/
+    /* width: 100%; */
+    /* border-radius: 5px; */
 }
 
 /*
@@ -340,8 +353,123 @@ SCHEDULE SECTION PUT STUFF HERE
 /* 
 
 FAQ SECTION GO HERE 
+/* faq grid */
+.faq-grid {
+    position: relative; /* so absolute positioning of answers is within the grid */ 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-rows: auto; /* fill automatically */ 
+    gap: 2vw;
+    margin-top: 2vh;
+    padding-top: 1vw;
+    padding-bottom: 4vw; /* flexible with screen width */
+}
 
-*/
+/* leaves enough room for the answers to display */ 
+.faq-grid::after {
+    content: ""; /* couldnt get spacing to work without this */ 
+    display: block;
+    height: 4vw; /* keep the same as padding-bottom */
+}
+
+/* each faq item */
+.faq-item {
+    position: relative; /* answer inside box */
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+    transition: margin-top 0.3s ease-in-out; /* for margin changes */
+}
+
+/* faq boxes */
+.faq-box {
+    background-color: #000000;
+    color: rgb(255, 255, 255); 
+    padding: 1.5vw; /* this changes with screen size */
+    border-radius: 1vw;
+    font-size: 1.5vw;
+    font-weight: bold;
+    border: 0.2vw solid rgb(255, 255, 255);
+    cursor: pointer; 
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    
+    /* sizes change with screen */
+    width: 15vw; 
+    max-width: 20vw;
+    height: 9vh;
+    min-height: 50px; /* minimum height for small screen so it can still be read */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* hover over questions */
+.faq-box:hover {
+    background-color: rgba(255, 255, 255, 0);
+    color: rgb(255, 69, 12);
+    border: 0.2vw solid rgb(255, 69, 12);
+    transform: scale(1.05);
+}
+
+/* answers */
+.faq-answer {
+    position: absolute; 
+    top: calc(100% + 0.5vw); /* this just moves it down */
+    left: 0; 
+    width: calc(100% - 4vw); /* this makes it the same as faq-box width minus padding */
+    background: linear-gradient(
+        to bottom,
+        #fb450d00 0%,
+        #ff603000 50%,
+        rgba(255, 69, 12, 0.517) 100%
+      );    
+    color: white;
+    font-size: 1.3vw; /* change with screen */
+    padding: 2vw;
+    border: 0.2vw solid white;
+    border-radius: 1vw;
+    /* width: 15vw; */
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15);
+    display: none; 
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+/* answer is shown when clicked */
+.faq-item.active .faq-answer {
+    display: block;
+    margin-top: 1.5vw;
+}
+
+/* this is all screen sizing stuff so it stays similarly laid out on different sizes */
+@media (max-width: 1024px) { 
+    /* 
+    .faq-grid {
+        /* grid-template-columns: repeat(2, 1fr);  
+        /* fewer columns for space 
+    }
+    */ 
+    .faq-box {
+        width: 20vw; /* slightly wider columns */
+        height: 10vh;
+    }
+}
+
+/* this could work for phones ? idk yet havent tested */ 
+@media (max-width: 768px) { 
+    .faq-grid {
+        /* grid-template-columns: repeat(1, 1fr); */
+         /* a single column */
+        gap: 4vw;
+    }
+    .faq-box {
+        width: 60vw; /* takes up more space */
+        height: 10vh;
+        font-size: 2vw; /* bigger font*/
+    }
+}
+
 
 /* 
 
@@ -560,26 +688,51 @@ MEET THE TEAM SECTION GO HERE
 /* Footer */
 footer {
     background-color: #062337;
-    width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     margin-top: auto;
-    padding: 15px;
+    padding: 30px;
+    width: 100%; 
+    /* outline: 2px solid green;  */
 }
 
-footer > h1 {
+.footerDiv {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+/* applies only to direct children of footerDiv */ 
+.footerDiv > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* images in the footer */
+.footerDiv img {
+    max-width: 200px;
+    height: auto; /* aspect ratio */
+    object-fit: contain; /* no stretching */
+}
+
+/* Footer text styling */
+.footerText > h1 {
     color: white;
     font-size: 1rem;
-    align-self: center;
+    text-align: center; /* centered text */
 }
 
 #logica_logo{
-    height:clamp(100px,1vw,500px); /* clamp(smallest, change rate, largest)*/
-    width:clamp(100px,1vw,500px);
+    height:clamp(100px,1vw,500px); /* clamp works like (smallest, change rate, largest) */
+    width:clamp(200px,1vw,500px);
+    filter: invert(1);
 }
 
 #wicys_logo{
     height:clamp(100px,1vw,500px);
-    width:clamp(120px,1vw,500px);
+    width:clamp(200px,1vw,500px);
+    filter: invert(1);
 }
