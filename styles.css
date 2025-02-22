@@ -172,7 +172,7 @@ ABOUT SECTION PUT STUFF HERE
     padding: 40px 30px;
     max-width: 80%; 
     margin: 40px auto;
-    /* box-shadow: 0 4px 15px rgba(255, 77, 77, 0.3); Subtle red glow */
+    box-shadow: 0 4px 15px rgba(255, 77, 77, 0.3); /* Subtle red glow */
     border-radius: 10px;
     transition: all 0.3s ease-in-out;
 }
@@ -186,10 +186,9 @@ ABOUT SECTION PUT STUFF HERE
 .about-section h2 {
     font-size: 3.2rem;
     font-weight: 800;
-    font-family:'KodeMono';
-    /* font-style: italic; */
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
     color: #ff4d4d; /* Fiery Red */
-    /* text-shadow: 0 0 10px #ff1a1a, 0 0 20px #820303; */
     text-transform: uppercase;
     letter-spacing: 2px;
     position: relative;
