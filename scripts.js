@@ -1,3 +1,19 @@
+document.addEventListener("DOMContentLoaded", function () {
+    const scheduleItems = document.querySelectorAll(".schedule-item");
+
+    scheduleItems.forEach(item => {
+        item.addEventListener("click", function () {
+            this.classList.toggle("active");
+            
+            // Toggle visibility of the next sibling (the .details div)
+            const details = this.nextElementSibling;
+            if (details && details.classList.contains("details")) {
+                details.style.display = details.style.display === "block" ? "none" : "block";
+            }
+        });
+    });
+});
+
 document.getElementById('about-btn').addEventListener('click', () => {
     document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
 });
