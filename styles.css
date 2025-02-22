@@ -4,8 +4,7 @@
     font-weight: normal;
     font-style: normal;
 }
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Monoton&family=Pacifico&family=Lobster&family=Black+Ops+One&family=Rubik+Glitch&family=Creepster&family=Zilla+Slab+Highlight&family=Bungee+Shade&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap&effect=fire-animation');
 /* General Styles */
 body {
     font-family:'KodeMono';
@@ -152,73 +151,53 @@ body {
 ABOUT SECTION PUT STUFF HERE  
 
 */
-
-/* background styling */
-.about-section { 
-    background-color: rgba(255, 77, 77, 0.15); 
-    border-left: 8px solid #ff4d4d; 
+/* About Section Styling */
+.about-section {
+    background-color: rgba(128, 0, 0, 0.1); /* Maroon with transparency */
+    border-left: 6px solid #ff4d4d; /* Red accent */
     text-align: center;
-    padding: 60px 40px;
-    max-width: 900px;
-    margin: 50px auto;
-    box-shadow: 0 0 20px rgba(255, 77, 77, 0.4);
-    border-radius: 12px;
+    padding: 40px 30px;
+    max-width: 80%; 
+    margin: 40px auto;
+    box-shadow: 0 4px 15px rgba(255, 77, 77, 0.3); /* Subtle red glow */
+    border-radius: 10px;
     transition: all 0.3s ease-in-out;
 }
 
-
-/* Zoom in on hover */
 .about-section:hover {
     transform: scale(1.02);
-    box-shadow: 0 0 25px rgba(255, 77, 77, 0.6);
+    box-shadow: 0 6px 20px rgba(255, 77, 77, 0.5); /* Enhanced glow on hover */
 }
 
- /* CYCLING TEXT EFFECT FOR "ABOUT" */
- .about-section h2 .dynamic-text {
-    font-size: 4rem;
-    font-weight: 700;
+/* Title */
+.about-section h2 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    color: #ff4d4d; /* Fiery Red */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
     display: inline-block;
-    /* animation: fontCycle 2.5s infinite ease-in-out, colorCycle 2.5s infinite alternate; */
-    transition: font-family 0.3s ease-in-out;
+    padding-bottom: 5px;
 }
 
+
+/* Paragraph Styling */
 .about-section p {
-    font-size: 1.4rem;
-    font-family:'KodeMono';
-    color: #e0e0e0;
-    line-height: 1.8;
+    font-size: 1.2rem;
+    font-family: 'KodeMono', monospace;
+    color: #e0e0e0; /* Light gray */
+    line-height: 1.6;
     margin-bottom: 20px;
 }
 
 .about-section .highlight {
-    color: #ff4d4d;
+    color: #ff4d4d; /* Red */
     font-weight: bold;
-    text-shadow: 0 0 5px #ff1a1a;
+    text-shadow: 0 0 5px rgba(255, 77, 77, 0.7); /* Subtle glow */
 }
-
-/* FONT CYCLING */
-@keyframes fontCycle {
-    0% { font-family: 'caveat', monospace; }
-    12.5% { font-family: 'Press Start 2P', cursive; }
-    25% { font-family: 'orbitron', cursive; }
-    37.5% { font-family: 'Chakra', cursive; }
-    50% { font-family: 'Black Ops One', sans-serif; }
-    62.5% { font-family: 'Rubik Glitch', sans-serif; }
-    75% { font-family: 'Silkscreen', cursive; }
-    87.5% { font-family: 'Zilla Slab Highlight', serif; }
-    100% { font-family: 'Bungee Shade', sans-serif; }
-}
-
-/* COLOR CYCLING */
-@keyframes colorCycle {
-    0% { color: #501619; }
-    20% { color: #D6920A; }
-    40% { color: #062337; }
-    60% { color: #000000; }
-    80% { color: #501619; }
-    100% { color: #007c41; }
-}
-
 
 
 
