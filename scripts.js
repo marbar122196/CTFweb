@@ -35,6 +35,7 @@ document.getElementById('resources-btn').addEventListener('click', () => {
 });
 
 
+
 const sponsors = [
     { clean: "zebrawhite.png", glitch: "zebra-glitch.png" },
     { clean: "motorolawhite.jpg", glitch: "motorola-glitch.png" },
