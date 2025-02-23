@@ -33,9 +33,12 @@ document.getElementById('sponsors-btn').addEventListener('click', () => {
 document.getElementById('resources-btn').addEventListener('click', () => {
     document.getElementById('resources').scrollIntoView({ behavior: 'smooth' });
 });
+
+
 const sponsors = [
-    { clean: "zebrawhite.png", glitch: "zebra-corrupted.png" },
-    { clean: "motorolawhite.jpg", glitch: "motorola-corrupted.png" }
+    { clean: "zebrawhite.png", glitch: "zebra-glitch.png" },
+    { clean: "motorolawhite.jpg", glitch: "motorola-glitch.png" },
+    { clean: "cmeGroup.png", glitch: "cmeGroup-glitch.png" }
 ];
 
 const canvas = document.getElementById("pixel-canvas");
