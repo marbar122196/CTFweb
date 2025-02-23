@@ -34,8 +34,8 @@ document.getElementById('resources-btn').addEventListener('click', () => {
     document.getElementById('resources').scrollIntoView({ behavior: 'smooth' });
 });
 const sponsors = [
-    { clean: "zebra.png", glitch: "zebra-corrupted.png" },
-    { clean: "motorola.jpg", glitch: "motorola-corrupted.png" }
+    { clean: "zebrawhite.png", glitch: "zebra-corrupted.png" },
+    { clean: "motorolawhite.jpg", glitch: "motorola-corrupted.png" }
 ];
 
 const canvas = document.getElementById("pixel-canvas");
