@@ -349,9 +349,30 @@ SPONSORS SECTION GO HERE
 
 */
 
+#sponsorsPartners {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+    /* flex-wrap: wrap; */
+    width: 100%;
+    align-items: stretch;
+    flex-wrap: nowrap; /* might have to fix this later */
+}
+
+
+.sponsor-section, .partner-section {
+    flex: 1;
+    max-width: 50%;
+    /* text-align: center; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /* Center the sponsor section */
-.sponsor-display {
-    position: relative;
+.sponsor-display, .partner-display {
+    /* position: relative;
     width: 500px;
     height: 200px;
     background-color: black;
@@ -359,10 +380,18 @@ SPONSORS SECTION GO HERE
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: auto;
+    margin: auto; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    background-color: black;
+    overflow: hidden;
+    position: relative;
 }
 
-.sponsor-section h2{
+.sponsor-section h2, .partner-section h2{
     font-size: 3.2rem;
     font-weight: 800;
     font-family:'KodeMono';
@@ -374,6 +403,7 @@ SPONSORS SECTION GO HERE
     position: relative;
     display: inline-block;
     padding-bottom: 5px;
+    text-align: center;
 }
 
 /* Style for sponsor logos */
@@ -384,16 +414,21 @@ SPONSORS SECTION GO HERE
     /* transition: opacity 0.5s ease-in-out, opacity 0.5s ease-in-out; */
 }
 
-#pixel-canvas {
-    border: 2px solid red;
+.sponsor-display canvas, .partner-display canvas {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: auto;
     image-rendering: pixelated;
     filter: contrast(120%) brightness(90%);
+}
+
+/* Only apply glitch animation when the glitch effect is active */
+.sponsor-display.glitch-active canvas, 
+.partner-display.glitch-active canvas {
     animation: glitchEffect 0.3s infinite;
 }
 
+/* Glitch animation */
 @keyframes glitchEffect {
     0% { filter: contrast(110%) hue-rotate(0deg); }
     50% { filter: contrast(130%) hue-rotate(10deg); }
