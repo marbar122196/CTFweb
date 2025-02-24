@@ -158,3 +158,58 @@ window.addEventListener("resize", resizeCanvas);
 // Rotate sponsor and partner logos every 3 seconds
 setInterval(glitchThenShowSponsor, 3000);
 setInterval(glitchThenShowPartner, 3000);
+
+
+const teamMembers = [
+    {
+        realName: "Brenda Leyva",
+        specialty: "President",
+        status: "WANTED",
+        image: "anonymous.jpg"
+    },
+    {
+        realName: "Coda Richmond",
+        specialty: "Experience - Lead",
+        status: "WANTED",
+        image: "anonymous.jpg"
+    },
+    {
+        realName: "Julia Bowman",
+        specialty: "Outreach - lead",
+        status: "CAPTURED",
+        image: "anonymous.jpg"
+    }
+];
+
+// Function to dynamically load the team section
+function loadTeam() {
+    const teamGrid = document.getElementById("teamGrid");
+    teamGrid.innerHTML = "";
+
+    teamMembers.forEach(member => {
+        const memberCard = document.createElement("div");
+        memberCard.classList.add("team-member");
+
+        // Add 'captured' class for styling if needed
+        if (member.status === "CAPTURED") {
+            memberCard.classList.add("captured");
+        }
+
+        // Threat level visualization (🔥🔥🔥🔥🔥)
+        let threatFlames = "🔥".repeat(member.threatLevel);
+
+        memberCard.innerHTML = `
+            <div class="status ${member.status === "CAPTURED" ? "captured" : ""}">${member.status}</div>
+            <img src="${member.image}" alt="${member.realName}">
+            <div class="hacker-info">
+                <div class="alias">${member.realName}</div>
+                <div class="specialty">${member.specialty}</div>
+            </div>
+        `;
+
+        teamGrid.appendChild(memberCard);
+    });
+}
+
+// Load team on page load
+window.addEventListener("load", loadTeam);
