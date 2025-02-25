@@ -61,6 +61,8 @@ body {
 .btn:hover {
     background-color: #ff1a1a;
     text-shadow: 0 0 10px #ff4d4d;
+    transform: scale(1.05);
+    
 }
 
 .btn.secondary {
@@ -71,6 +73,7 @@ body {
 .btn.secondary:hover {
     background-color: #ff4d4d;
     color: black;
+    transform: scale(1.05);
 }
 
 
@@ -117,11 +120,13 @@ body {
     padding: 1px 5px;
     cursor: pointer;
     font-size: 1em;
+    transition: 0.3s;
 }
 
 .banner nav a:hover {
     color: #ff4d4d; /* Glowing red text */
     text-shadow: 0 0 10px #820303, 0 0 20px #ff1a1a;
+    transform: scale(1.05);
 }
 
 /* Main Container for Sections */
