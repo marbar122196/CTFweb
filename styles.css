@@ -173,7 +173,7 @@ ABOUT SECTION PUT STUFF HERE
 .about-section h2 {
     font-size: 3.2rem;
     font-weight: 800;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    /* font-family:Georgia, 'Times New Roman', Times, serif; */
     font-style: italic;
     color: #ff4d4d; /* Fiery Red */
     text-transform: uppercase;
@@ -216,7 +216,7 @@ SCHEDULE SECTION PUT STUFF HERE
 .schedule-section h2 {
     font-size: 3.2rem;
     font-weight: 800;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    /* font-family:Georgia, 'Times New Roman', Times, serif; */
     font-style: italic;
     color: #ff4d4d; 
     text-transform: uppercase;
@@ -231,7 +231,7 @@ SCHEDULE SECTION PUT STUFF HERE
     display: flex;
     flex-direction: column;
     gap: 15px;
-    max-width: 90%; 
+    max-width: 95%; 
     margin: 0 auto;
 }
 
@@ -240,13 +240,17 @@ SCHEDULE SECTION PUT STUFF HERE
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(135deg, rgba(255, 0, 0, 0.3), rgba(147, 32, 16, 0.1));
-    padding: 15px;
-    border-radius: 10px;
+    background: rgba(109, 35, 35,0.5);
+    backdrop-filter: blur(10px); 
+    padding: 20px;
+    border-radius: 12px;
+    cursor: pointer;
     /* box-shadow: 0px 0px 10px rgba(255, 77, 77, 0.5); */
-    transition: transform 0.2s, box-shadow 0.3s ease-in-out;
-    border-left: 4px solid #ff4d4d;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s ease-in-out, background 0.3s ease-in-out;
+    border-left: 5px solid #ff4d4d;
     width: 100%; 
+    flex-grow: 1;
 }
 
 .schedule-item:hover {
@@ -256,7 +260,7 @@ SCHEDULE SECTION PUT STUFF HERE
 
 /* Highlight Important Events */
 .schedule-item.highlight {
-    background: rgba(255, 77, 77, 0.5);
+    background: rgba(163, 29, 29,0.8);
     font-weight: bold;
     border-left: 6px solid #ffeb3b;
 }
@@ -267,17 +271,30 @@ SCHEDULE SECTION PUT STUFF HERE
     font-weight: bold;
     border-left: 6px solid yellow;
     text-shadow: 0 0 10px yellow;
+    display: inline-block;
+    padding: 0 60px; 
+    white-space: nowrap;
+}
+.schedule-item.active {
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .schedule-item .time {
     font-weight: bold;
     color: #ffeb3b;
     font-size: 1.2rem;
+    flex-grow: 1;
+    text-align: left;
 }
 
 .schedule-item .event {
     font-size: 1.3rem;
     color: white;
+    flex-grow: 2;
+    text-align: center;
+    display: inline-block;
+    padding: 0 60px; 
+    white-space: nowrap;
 }
 
 .schedule-header {
@@ -327,11 +344,20 @@ SCHEDULE SECTION PUT STUFF HERE
     transform: rotate(45deg);
 }
 
+.schedule-item.active + .details {
+    display: block;
+    max-height: 300px;
+    opacity: 1;
+}
+
 /* Responsive Design */
 @media (max-width: 600px) {
     .schedule-item {
         flex-direction: column;
         text-align: center;
+    }
+    .schedule-item .event {
+        padding: 10px;
     }
 }
 
