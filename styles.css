@@ -153,12 +153,189 @@ ABOUT SECTION PUT STUFF HERE
 
 */
 
+.about-section {
+    background-color: rgba(128, 0, 0, 0.1); /* Maroon with transparency */
+    border-left: 6px solid #ff4d4d; /* Red accent */
+    text-align: center;
+    padding: 40px 30px;
+    max-width: 80%; 
+    margin: 40px auto;
+    /* box-shadow: 0 4px 15px rgba(255, 77, 77, 0.3); Subtle red glow */
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.about-section:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(255, 77, 77, 0.5); /* Enhanced glow on hover */
+}
+
+/* Title */
+.about-section h2 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    color: #ff4d4d; /* Fiery Red */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+
+/* Paragraph Styling */
+.about-section p {
+    font-size: 1.2rem;
+    font-family: 'KodeMono', monospace;
+    color: #e0e0e0; /* Light gray */
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.about-section .highlight {
+    color: #ff4d4d; /* Red */
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(255, 77, 77, 0.7); /* Subtle glow */
+}
+
+
 
 /* 
 
 SCHEDULE SECTION PUT STUFF HERE 
 
 */
+
+.schedule-section {
+    text-align: center;
+    padding: 50px 20px;
+    background: black;
+    color: white;
+}
+
+.schedule-section h2 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    color: #ff4d4d; 
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Schedule Container */
+.schedule-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 90%; 
+    margin: 0 auto;
+}
+
+/* Individual Schedule Items */
+.schedule-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(255, 0, 0, 0.3), rgba(147, 32, 16, 0.1));
+    padding: 15px;
+    border-radius: 10px;
+    /* box-shadow: 0px 0px 10px rgba(255, 77, 77, 0.5); */
+    transition: transform 0.2s, box-shadow 0.3s ease-in-out;
+    border-left: 4px solid #ff4d4d;
+    width: 100%; 
+}
+
+.schedule-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px rgba(255, 77, 77, 0.8);
+}
+
+/* Highlight Important Events */
+.schedule-item.highlight {
+    background: rgba(255, 77, 77, 0.5);
+    font-weight: bold;
+    border-left: 6px solid #ffeb3b;
+}
+
+/* Special Styling for the Main Event */
+.schedule-item.main-event {
+    background: rgba(255, 0, 0, 0.8);
+    font-weight: bold;
+    border-left: 6px solid yellow;
+    text-shadow: 0 0 10px yellow;
+}
+
+.schedule-item .time {
+    font-weight: bold;
+    color: #ffeb3b;
+    font-size: 1.2rem;
+}
+
+.schedule-item .event {
+    font-size: 1.3rem;
+    color: white;
+}
+
+.schedule-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.caret {
+    width: 12px;
+    height: 12px;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(-45deg);
+    transition: transform 0.3s ease;
+    margin-left: 10px;
+}
+
+.schedule-item.active .caret {
+    transform: rotate(45deg);
+}
+
+.details {
+    display: none;
+    margin-top: 10px;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(128, 0, 0, 0.1), rgba(40, 40, 40, 0.9));
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    transition: max-height 0.5s ease-out, opacity 0.4s ease-in-out;
+    /* box-shadow: 0 0 10px rgba(255, 77, 77, 0.3); */
+}
+
+.schedule-item.active .details {
+    max-height: 300px; 
+    opacity: 1;
+}
+
+/* caret animation */
+.caret {
+    transition: transform 0.3s ease, opacity 0.2s ease-in-out;
+}
+
+.schedule-item.active .caret {
+    transform: rotate(45deg);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .schedule-item {
+        flex-direction: column;
+        text-align: center;
+    }
+}
 
 
 
@@ -186,35 +363,185 @@ RESOURCES SECTION GO HERE
 
 /* MEET THE TEAM SECTION GO HERE  */
 
-.container {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); 
-    gap: 40px;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    margin: auto;
-    padding-top: 50px;
+/*team section */
+#team {
+    padding: 40px 0;
 }
 
-.circle-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/*table view */
+.team-table {
+    width: 100%;
+    margin-top: 30px;
+    overflow-x: auto;
 }
 
-.circle {
-    width: 100px;
-    height: 100px;
-    background: radial-gradient(circle, #ff9900, #8b4500);
-    border-radius: 50%;
-    box-shadow: 0px 5px 10px rgba(255, 165, 0, 0.5);
+.team-table table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 30px 40px;  
 }
 
-.label {
-    margin-top: 10px;
-    font-size: 16px;
+.team-member-cell {
+    padding: 0;
+    vertical-align: top;
+    width: 25%;
+}
+
+/*team member card styling */
+.team-member {
+    position: relative;
+    background-color: #111;
+    border: 1px solid #333;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    height: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    cursor: default;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.team-member::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ff3030, #2090ff, transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.team-member:hover::after {
+    opacity: 1;
+    animation: scanline 2s linear infinite;
+}
+
+@keyframes scanline {
+    0% { transform: translateY(-5px); }
+    100% { transform: translateY(100%); }
+}
+
+.team-member img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    filter: grayscale(80%);
+    transition: filter 0.3s ease;
+}
+
+.team-member:hover img {
+    filter: grayscale(0%);
+}
+
+.status {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff5050;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 12px;
     font-weight: bold;
+    z-index: 10;
+}
+
+.status.captured {
+    background-color: #50c878;
+}
+
+.hacker-info {
+    padding: 15px;
+    color: #eee;
+    background-color: #1a1a1a;
+    position: relative;
+    overflow: hidden;
+}
+
+.hacker-info::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(0, 0, 0, 0.1),
+        rgba(0, 0, 0, 0.1) 5px,
+        rgba(0, 0, 0, 0.2) 5px,
+        rgba(0, 0, 0, 0.2) 10px
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.team-member:hover .hacker-info::before {
+    opacity: 1;
+}
+
+.real-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #ff5050;
+    transition: transform 0.1s ease;
+}
+
+.alias {
+    font-style: italic;
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #50c878;
+    transition: transform 0.1s ease;
+}
+
+.specialty {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 8px;
+    transition: transform 0.1s ease;
+}
+
+.threat-level {
+    margin-top: 5px;
+    letter-spacing: 2px;
+}
+
+/*Red-Blue glitch effect */
+.actively-glitching {
+    position: relative;
+}
+
+.actively-glitching::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255,255,255,0.05);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/*media query*/
+@media (max-width: 768px) {
+    .team-table table {
+        border-spacing: 15px 30px;
+    }
+    
+    .team-member-cell {
+        display: block;
+        width: 100%;
+    }
 }
 
 
