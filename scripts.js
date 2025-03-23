@@ -33,29 +33,6 @@ document.getElementById('sponsors-btn').addEventListener('click', () => {
 document.getElementById('resources-btn').addEventListener('click', () => {
     document.getElementById('resources').scrollIntoView({ behavior: 'smooth' });
 });
-<<<<<<< Updated upstream
-const sponsors = [
-    { clean: "zebra.png", glitch: "zebra-corrupted.png" },
-    { clean: "motorola.jpg", glitch: "motorola-corrupted.png" }
-];
-
-const canvas = document.getElementById("pixel-canvas");
-const ctx = canvas.getContext("2d");
-
-// Ensure canvas size matches display
-canvas.width = 300;
-canvas.height = 150;
-
-let currentIndex = 0; // Track the current sponsor index
-
-function pixelGlitchEffect(callback) {
-    let sponsorPair = sponsors[currentIndex]; // Get the current sponsor pair
-    let img = new Image();
-    img.src = sponsorPair.glitch; // Load the glitched version first
-    img.crossOrigin = "Anonymous"; // Prevent CORS issues
-
-    img.onload = () => {
-=======
 
 
 /* faq - answer drop down script */ 
@@ -124,11 +101,13 @@ const mainSponsor = { clean: "zebrawhite.png", glitch: "zebra-glitch.png" };
 
 const sponsors = [
     { clean: "motorolawhite.jpg", glitch: "motorola-glitch.png" },
-    { clean: "cmeGroup.png", glitch: "cmeGroup-glitch.png" }
+    { clean: "cmeGroup.png", glitch: "cmeGroup-glitch.png" },
+    { clean: "discover.png", glitch: "discover-glitch.png" }
 ];
 
 const partners = [
-    { clean: "imanage.png", glitch: "imanage-glitch.png" }
+    { clean: "imanage.png", glitch: "imanage-glitch.png" },
+    { clean: "caci.avif", glitch: "caci-glitch.png" }
 ];
 
 // Get canvas elements
@@ -174,34 +153,33 @@ function pixelGlitchEffect(canvas, ctx, imagePair, callback) {
     glitchImg.crossOrigin = "Anonymous"; // Prevent CORS issues
 
     glitchImg.onload = () => {
->>>>>>> Stashed changes
         let glitchSteps = 6; // Number of glitch transitions
         let step = 0;
 
         function applyGlitch() {
             if (step >= glitchSteps) {
-                callback(sponsorPair.clean); // Switch to the official sponsor after glitching
+                callback(imagePair.clean); // Show clean logo after glitching
                 return;
             }
 
             // Clear canvas
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-            // Apply random pixelation distortion
+            // Apply pixelation with random distortion
             let pixelSize = Math.floor(Math.random() * 10) + 2;
-            ctx.drawImage(img, 0, 0, canvas.width / pixelSize, canvas.height / pixelSize);
+            ctx.drawImage(glitchImg, 0, 0, canvas.width / pixelSize, canvas.height / pixelSize);
             ctx.drawImage(canvas, 0, 0, canvas.width / pixelSize, canvas.height / pixelSize, 0, 0, canvas.width, canvas.height);
 
-            // Add random scan lines
+            // Add random horizontal scan lines
             for (let i = 0; i < 5; i++) {
                 let y = Math.random() * canvas.height;
                 ctx.fillStyle = "rgba(255, 0, 0, 0.2)";
                 ctx.fillRect(0, y, canvas.width, 2);
             }
 
-            // Add RGB shift effect
+            // Add slight RGB shift effect
             ctx.globalCompositeOperation = "difference";
-            ctx.drawImage(img, Math.random() * 10 - 5, Math.random() * 10 - 5, canvas.width, canvas.height);
+            ctx.drawImage(glitchImg, Math.random() * 10 - 5, Math.random() * 10 - 5, canvas.width, canvas.height);
             ctx.globalCompositeOperation = "source-over";
 
             step++;
@@ -211,12 +189,13 @@ function pixelGlitchEffect(canvas, ctx, imagePair, callback) {
         applyGlitch();
     };
 
-    img.onerror = () => {
-        console.error("Error loading glitch image:", sponsorPair.glitch);
+    glitchImg.onerror = () => {
+        console.error("Error loading glitch image:", imagePair.glitch);
     };
 }
 
-function displayOfficialSponsor(officialImage) {
+// Display the official logo after glitch effect
+function displayOfficialLogo(canvas, ctx, officialImage) {
     let officialImg = new Image();
     officialImg.src = officialImage;
     officialImg.onload = () => {
@@ -225,19 +204,6 @@ function displayOfficialSponsor(officialImage) {
     };
 }
 
-<<<<<<< Updated upstream
-function glitchThenShowOfficial() {
-    pixelGlitchEffect((officialImage) => {
-        setTimeout(() => {
-            displayOfficialSponsor(officialImage);
-            currentIndex = (currentIndex + 1) % sponsors.length; // Cycle to the next sponsor
-        }, 200);
-    });
-}
-
-// Run the glitch effect every 3 seconds, then settle on the correct official sponsor
-setInterval(glitchThenShowOfficial, 3000);
-=======
 // Apply glitch effect then show the final logo
 function glitchThenShow(canvas, ctx, imagePair) {
     pixelGlitchEffect(canvas, ctx, imagePair, (cleanLogo) => {
@@ -253,7 +219,7 @@ function startRandomGlitchLoop(canvas, ctx, imagePair) {
         glitchThenShow(canvas, ctx, imagePair);
         
         // Generate a new random interval between **8 to 15 seconds**
-        let randomDelay = Math.floor(Math.random() * (8000 - 3000) + 3000); 
+        let randomDelay = Math.floor(Math.random() * (10000 - 5000) + 5000); 
         
         setTimeout(glitchWithRandomDelay, randomDelay);
     }
@@ -339,4 +305,3 @@ function loadTeam() {
 
 // Load team on page load
 window.addEventListener("load", loadTeam);
->>>>>>> Stashed changes
