@@ -227,7 +227,7 @@ SCHEDULE SECTION PUT STUFF HERE
     color: white;
 }
 
-.schedule-section h2 {
+.schedule-section h2, .faq-section h2 {
     font-size: 3.2rem;
     font-weight: 800;
     font-family:'KodeMono';
@@ -311,10 +311,6 @@ SCHEDULE SECTION PUT STUFF HERE
     margin-left: 10px;
 }
 
-.schedule-item.active .caret {
-    transform: rotate(45deg);
-}
-
 .details {
     display: none;
     margin-top: 10px;
@@ -338,7 +334,7 @@ SCHEDULE SECTION PUT STUFF HERE
 }
 
 .schedule-item.active .caret {
-    transform: rotate(45deg);
+    transform: rotate(136deg);
 }
 
 /* Responsive Design */
@@ -353,6 +349,7 @@ SCHEDULE SECTION PUT STUFF HERE
 /* 
 
 FAQ SECTION GO HERE 
+<<<<<<< HEAD
 /* faq grid */
 .faq-grid {
     position: relative; /* so absolute positioning of answers is within the grid */ 
@@ -470,7 +467,125 @@ FAQ SECTION GO HERE
     }
 }
 
+/* faq grid */
 
+.faq-grid {
+    position: relative; /* so absolute positioning of answers is within the grid */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-rows: auto; /* fill automatically */
+    gap: 2vw;
+    margin-top: 2vh;
+    padding-top: 1vw;
+    padding-bottom: 4vw; /* flexible with screen width */
+}
+
+/* leaves enough room for the answers to display */ 
+.faq-grid::after {
+    content: ""; /* couldnt get spacing to work without this */ 
+    display: block;
+    height: 4vw; /* keep the same as padding-bottom */
+}
+
+/* each faq item */
+.faq-item {
+    position: relative; /* answer inside box */
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+    transition: margin-top 0.3s ease-in-out; /* for margin changes */
+}
+
+/* faq boxes */
+.faq-box {
+    background-color: #000000;
+    color: rgb(255, 255, 255); 
+    padding: 1.5vw; /* this changes with screen size */
+    border-radius: 1vw;
+    font-size: 1.5vw;
+    font-weight: bold;
+    border: 0.2vw solid rgb(255, 255, 255);
+    cursor: pointer; 
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    
+    /* sizes change with screen */
+    width: 15vw; 
+    max-width: 20vw;
+    height: 9vh;
+    min-height: 50px; /* minimum height for small screen so it can still be read */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* hover over questions */
+.faq-box:hover {
+    background-color: rgba(255, 255, 255, 0);
+    color: solid #ff4d4d;;
+    border: 0.2vw solid #ff4d4d;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #ff4d4d;
+    text-shadow: 0 0 10px #ff4d4d;
+}
+
+/* answers */
+.faq-answer {
+    position: absolute; 
+    top: calc(100% + 0.5vw); /* this just moves it down */
+    left: 0; 
+    width: calc(100% - 4vw); /* this makes it the same as faq-box width minus padding */
+    background: linear-gradient(
+        to bottom,
+        #fb450d00 0%,
+        #ff603000 50%,
+        rgba(255, 69, 12, 0.517) 100%
+      );    
+    color: white;
+    font-size: 1.3vw; /* change with screen */
+    padding: 2vw;
+    border: 0.2vw solid white;
+    border-radius: 1vw;
+    /* width: 15vw; */
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15);
+    display: none; 
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+/* answer is shown when clicked */
+.faq-item.active .faq-answer {
+    display: block;
+    margin-top: 1.5vw;
+}
+
+/* this is all screen sizing stuff so it stays similarly laid out on different sizes */
+@media (max-width: 1024px) { 
+    /* 
+    .faq-grid {
+        /* grid-template-columns: repeat(2, 1fr);  
+        /* fewer columns for space 
+    }
+    */ 
+    .faq-box {
+        width: 20vw; /* slightly wider columns */
+        height: 10vh;
+    }
+}
+
+/* this could work for phones ? idk yet havent tested */ 
+@media (max-width: 768px) { 
+    .faq-grid {
+        /* grid-template-columns: repeat(1, 1fr); */
+         /* a single column */
+        gap: 4vw;
+    }
+    .faq-box {
+        width: 60vw; /* takes up more space */
+        height: 10vh;
+        font-size: 2vw; /* bigger font*/
+    }
+}
 /* 
 
 SPONSORS SECTION GO HERE
@@ -504,32 +619,163 @@ SPONSORS SECTION GO HERE
     padding-bottom: 5px;
 }
 
-/* Style for sponsor logos */
-#sponsor-logo {
-    display: none;
-    max-width: 100%;
-    max-height: 100%;
-    /* transition: opacity 0.5s ease-in-out, opacity 0.5s ease-in-out; */
+/* === SPONSORS & PARTNERS SECTION === */
+#sponsorsPartners {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 50px 20px;
+    text-align: center;
 }
 
-#pixel-canvas {
-    border: 2px solid red;
+/* Titles */
+#sponsorsPartners h2 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    font-family: 'KodeMono';
+    color: #ff4d4d;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+/* === MAIN SPONSOR SECTION === */
+.main-sponsor {
+    text-align: center;
+    margin-bottom: 40px;
+    width: 60%;
+}
+
+#sponsorsPartners h3 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: #ffeb3b;
+    /* text-shadow: 0 0 10px yellow; */
+}
+
+/* Style the main sponsor display */
+.sponsor-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 250px;
+    background-color: rgba(128, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    border-left: 6px solid #ff4d4d;
+    border-radius: 15px;
+}
+
+.sponsor-display:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(255, 77, 77, 0.5);
+}
+
+/* === SPONSOR GRID (Other Sponsors) === */
+.sponsor-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 80%;
+    margin-top: 20px;
+}
+
+.sponsor-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 150px;
+    background-color: rgba(128, 0, 0, 0.1);
+    border-left: 6px solid #ff4d4d;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.sponsor-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(255, 77, 77, 0.5);
+}
+
+/* === PARTNER SECTION === */
+.partner-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 60%;
+    margin-top: 20px;
+}
+
+.partner-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 150px;
+    background-color: black;
+    border-left: 6px solid #ffeb3b;
+    border-radius: 10px;
+    overflow: visible;
+    position: relative;
+    padding-left: 15px;
+}
+
+
+
+.partner-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(255, 235, 59, 0.8); /* Enhanced glow on hover */
+}
+
+/* === CANVAS STYLE FOR SPONSORS/PARTNERS === */
+.sponsor-card canvas,
+.partner-card canvas,
+.sponsor-display canvas {
     position: absolute;
     width: 100%;
     height: 100%;
     image-rendering: pixelated;
     filter: contrast(120%) brightness(90%);
+}
+
+/* Only apply glitch animation when active */
+.sponsor-display.glitch-active canvas,
+.sponsor-card.glitch-active canvas,
+.partner-card.glitch-active canvas {
     animation: glitchEffect 0.3s infinite;
 }
 
+/* === GLITCH ANIMATION === */
 @keyframes glitchEffect {
     0% { filter: contrast(110%) hue-rotate(0deg); }
     50% { filter: contrast(130%) hue-rotate(10deg); }
     100% { filter: contrast(110%) hue-rotate(0deg); }
 }
 
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 1024px) {
+    .sponsor-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 
+@media (max-width: 768px) {
+    .sponsor-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
 
+    .partner-grid {
+        flex-direction: column;
+        width: 80%;
+    }
+}
 /* 
 
 RESOURCES SECTION GO HERE

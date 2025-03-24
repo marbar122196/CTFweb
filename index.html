@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="website icon" type="png" href="CTF_Logo_SP25.png">
 </head>
+
 <body>
 
     <!-- Navigation Banner -->
@@ -126,49 +127,12 @@
             </div>
         </section>
 
-        <!-- FAQ Section -->
-        <div class="section-container" id="faq">
-            <h2>FAQ</h2>
-            <p>Frequently asked questions.</p>
-
             <!-- faq grid stuff -->
-            <div class="section-container" id="faq">
+            <div class="section-container faq-section" id="faq">
                 <h2>FAQ</h2>
-                <p>Frequently asked questions.</p>
+
                 <!-- faq grid -->
-                <div class="faq-grid">
-                    <div class="faq-item">
-                        <div class="faq-box">What is a Capture the Flag?</div>
-                        <div class="faq-answer">Ask Brenda for this answer</div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-box">What if I don't have experience?</div>
-                        <div class="faq-answer">You don't need experience! We have a Beginner Track for those with no prior experience.</div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-box">Why would I do a Capture the Flag?</div>
-                        <div class="faq-answer">Answer to Question 3</div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-box">Do I have to go to UIC to participate?</div>
-                        <div class="faq-answer">Answer to Question 4</div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-box">Question 5</div>
-                        <div class="faq-answer">Answer to Question 5</div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-box">Question 5</div>
-                        <div class="faq-answer">Answer to Question 5</div>
-                    </div>                    
-                    <div class="faq-item">
-                        <div class="faq-box">Question 5</div>
-                        <div class="faq-answer">Answer to Question 5</div>
-                    </div>                    
-                    <div class="faq-item">
-                        <div class="faq-box">Question 5</div>
-                        <div class="faq-answer">Answer to Question 5</div>
-                    </div>                    
+                <div class="faq-grid">                   
                     <div class="faq-item">
                         <div class="faq-box">Question 5</div>
                         <div class="faq-answer">Answer to Question 5</div>
@@ -185,6 +149,7 @@
                         <div class="faq-box">Question 5</div>
                         <div class="faq-answer">Answer to Question 5</div>
                     </div>
+
                 </div>
                 <!---
 
@@ -194,21 +159,42 @@
                     -->
             </div>
 
-        <!-- Sponsors Section -->
-        <div class="section-container sponsor-section" id="sponsors">
-            <h2>Sponsors</h2>
+<!-- Sponsors & Partners Section -->
+    <div class="section-container" id="sponsorsPartners">
+        <h2>Sponsors</h2>
+
+        <!-- Main Sponsor (Bigger and Centered) -->
+        <div class="main-sponsor">
             <div class="sponsor-display">
-                <canvas id="pixel-canvas"></canvas>
-                <img id="sponsor-logo" src="zebrawhite.png" alt="Sponsor">
+                <canvas id="main-sponsor-canvas"></canvas>
             </div>
-            <!-- <p>Information about sponsors.</p> -->
         </div>
 
-        <!-- Resources Section -->
-        <div class="section-container" id="resources">
-            <h2>Resources</h2>
-            <p>Useful resources for participants.</p>
+        <!-- Other Sponsors (Displayed in a Grid) -->
+        <div class="sponsor-grid">
+            <div class="sponsor-card">
+                <canvas id="sponsor-canvas-1"></canvas>
+            </div>
+            <div class="sponsor-card">
+                <canvas id="sponsor-canvas-2"></canvas>
+            </div>
+            <div class="sponsor-card">
+                <canvas id="sponsor-canvas-3"></canvas>
+            </div>
         </div>
+
+        <h3>Partners</h3>
+
+        <!-- Partners (Displayed in a Row) -->
+        <div class="partner-grid">
+            <div class="partner-card">
+                <canvas id="partner-canvas-1"></canvas>
+            </div>
+            <div class="partner-card">
+                <canvas id="partner-canvas-2"></canvas>
+            </div>
+        </div>
+    </div>
 
         <!-- Meet the Team Section -->
         <div class="section-container" id="team">
