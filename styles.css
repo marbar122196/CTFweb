@@ -165,6 +165,55 @@ ABOUT SECTION PUT STUFF HERE
 
 
 */
+/* About Section Styling */
+.about-section {
+    background-color: #8000001a; /* Maroon with transparency */
+    border-left: 6px solid #ff4d4d; /* Red accent */
+    text-align: center;
+    padding: 40px 30px;
+    max-width: 80%; 
+    margin: 40px auto;
+    /* box-shadow: 0 4px 15px rgba(255, 77, 77, 0.3); Subtle red glow */
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.about-section:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(255, 77, 77, 0.5); /* Enhanced glow on hover */
+}
+
+/* Title */
+.about-section h2 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    font-family:'KodeMono';
+    /* font-style: italic; */
+    color: #ff4d4d; /* Fiery Red */
+    /* text-shadow: 0 0 10px #ff1a1a, 0 0 20px #820303; */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+
+/* Paragraph Styling */
+.about-section p {
+    font-size: 1.2rem;
+    font-family: 'KodeMono', monospace;
+    color: #e0e0e0; /* Light gray */
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.about-section .highlight {
+    color: #ff4d4d; /* Red */
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(255, 77, 77, 0.7); /* Subtle glow */
+}
+
 
 
 /* 
@@ -197,23 +246,37 @@ FAQ SECTION GO HERE
     height: 4vw; /* keep the same as padding-bottom */
 }
 
-/* each faq item */
-.faq-item {
-    position: relative; /* answer inside box */
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    text-align: center; 
-    transition: margin-top 0.3s ease-in-out; /* for margin changes */
+/* Schedule Container */
+.schedule-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 90%; 
+    margin: 0 auto;
 }
 
-/* faq boxes */
-.faq-box {
-    background-color: #000000;
-    color: rgb(255, 255, 255); 
-    padding: 1.5vw; /* this changes with screen size */
-    border-radius: 1vw;
-    font-size: 1.5vw;
+/* Individual Schedule Items */
+.schedule-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(255, 0, 0, 0.3), rgba(147, 32, 16, 0.1));
+    padding: 15px;
+    border-radius: 10px;
+    /* box-shadow: 0px 0px 10px rgba(255, 77, 77, 0.5); */
+    transition: transform 0.2s, box-shadow 0.3s ease-in-out;
+    border-left: 4px solid #ff4d4d;
+    width: 100%; 
+}
+
+.schedule-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px rgba(255, 77, 77, 0.8);
+}
+
+/* Highlight Important Events */
+.schedule-item.highlight {
+    background: #ff4d4d80;
     font-weight: bold;
     border: 0.2vw solid rgb(255, 255, 255);
     cursor: pointer; 
@@ -281,6 +344,124 @@ FAQ SECTION GO HERE
     }
 }
 
+/* Responsive Design */
+@media (max-width: 600px) {
+    .schedule-item {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+
+/* 
+
+FAQ SECTION GO HERE 
+
+*/
+/* faq grid */
+.faq-grid {
+    position: relative; /* so absolute positioning of answers is within the grid */ 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-rows: auto; /* fill automatically */ 
+    gap: 2vw;
+    margin-top: 2vh;
+    padding-top: 1vw;
+    padding-bottom: 4vw; /* flexible with screen width */
+}
+
+/* leaves enough room for the answers to display */ 
+.faq-grid::after {
+    content: ""; /* couldnt get spacing to work without this */ 
+    display: block;
+    height: 4vw; /* keep the same as padding-bottom */
+}
+
+/* each faq item */
+.faq-item {
+    position: relative; /* answer inside box */
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+    transition: margin-top 0.3s ease-in-out; /* for margin changes */
+}
+
+/* faq boxes */
+.faq-box {
+    background-color: #ff4d4d80;
+    color: rgb(255, 255, 255); 
+    padding: 1.5vw; /* this changes with screen size */
+    border-radius: 1vw;
+    font-size: 1.5vw;
+    font-weight: bold;
+    /* border: 0.2vw solid rgb(255, 255, 255); */
+    cursor: pointer; 
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    
+    /* sizes change with screen */
+    width: 15vw; 
+    max-width: 20vw;
+    height: 9vh;
+    min-height: 50px; /* minimum height for small screen so it can still be read */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* hover over questions */
+.faq-box:hover {
+    /* background-color: rgba(255, 255, 255, 0);
+    color: rgb(255, 69, 12); */
+    /* border: 0.2vw solid rgb(255, 69, 12); */
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 77, 77, 0.8);
+}
+
+/* answers */
+.faq-answer {
+    position: absolute; 
+    top: calc(100% + 0.5vw); /* this just moves it down */
+    left: 0; 
+    width: calc(100% - 4vw); /* this makes it the same as faq-box width minus padding */
+    background: linear-gradient(
+        to bottom,
+        #fb450d00 0%,
+        #ff603000 50%,
+        rgba(128, 0, 0, 0.63) 100%
+      );    
+    color: white;
+    font-size: 1.3vw; /* change with screen */
+    padding: 2vw;
+    border: 0.2vw solid white;
+    border-radius: 1vw;
+    /* width: 15vw; */
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15);
+    display: none; 
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+/* answer is shown when clicked */
+.faq-item.active .faq-answer {
+    display: block;
+    margin-top: 1.5vw;
+}
+
+/* this is all screen sizing stuff so it stays similarly laid out on different sizes */
+@media (max-width: 1024px) { 
+    /* 
+    .faq-grid {
+        /* grid-template-columns: repeat(2, 1fr);  
+        /* fewer columns for space 
+    }
+    */ 
+    .faq-box {
+        width: 20vw; /* slightly wider columns */
+        height: 10vh;
+    }
+}
+
 /* this could work for phones ? idk yet havent tested */ 
 @media (max-width: 768px) { 
     .faq-grid {
@@ -294,7 +475,6 @@ FAQ SECTION GO HERE
         font-size: 2vw; /* bigger font*/
     }
 }
-
 
 /* 
 
