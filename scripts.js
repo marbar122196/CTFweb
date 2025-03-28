@@ -27,11 +27,11 @@ document.getElementById('faq-btn').addEventListener('click', () => {
 });
 
 document.getElementById('sponsors-btn').addEventListener('click', () => {
-    document.getElementById('sponsors').scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('sponsorsPartners').scrollIntoView({ behavior: 'smooth' });
 });
 
-document.getElementById('resources-btn').addEventListener('click', () => {
-    document.getElementById('resources').scrollIntoView({ behavior: 'smooth' });
+document.getElementById('meetTheTeam-btn').addEventListener('click', () => {
+    document.getElementById('team').scrollIntoView({ behavior: 'smooth' });
 });
 
 
@@ -300,7 +300,7 @@ const teamMembers = [
         realName: "Kevin Palma",
         specialty: "Outreach Co-Lead | Experience member",
         status: "CAPTURED",
-        image: "teamPhotos/eva.JPG",
+        image: "anonymous.jpg",
         threatLevel: 3
     },
     {
@@ -349,7 +349,7 @@ const teamMembers = [
         realName: "Manan",
         specialty: "Web Development member",
         status: "Wanted",
-        image: "teamPhotos/eva.JPG",
+        image: "anonymous.jpg",
         threatLevel: 3
     },
 ];
