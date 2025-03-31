@@ -229,7 +229,6 @@ SCHEDULE SECTION PUT STUFF HERE
 .schedule-section h2 {
     font-size: 3.2rem;
     font-weight: 800;
-    /* font-family:Georgia, 'Times New Roman', Times, serif; */
     font-style: bold;
     color: #ff4d4d; 
     text-transform: uppercase;
@@ -244,8 +243,9 @@ SCHEDULE SECTION PUT STUFF HERE
     display: flex;
     flex-direction: column;
     gap: 15px;
-    max-width: 95%; 
+    max-width: 100%; 
     margin: 0 auto;
+    width: 100%;
 }
 
 /* Individual Schedule Items */
@@ -258,12 +258,10 @@ SCHEDULE SECTION PUT STUFF HERE
     padding: 20px;
     border-radius: 12px;
     cursor: pointer;
-    /* box-shadow: 0px 0px 10px rgba(255, 77, 77, 0.5); */
-    cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s ease-in-out, background 0.3s ease-in-out;
     border-left: 5px solid #ff4d4d;
     width: 100%; 
-    flex-grow: 1;
+    box-sizing: border-box;
 }
 
 .schedule-item:hover {
@@ -288,6 +286,7 @@ SCHEDULE SECTION PUT STUFF HERE
     padding: 0 60px; 
     white-space: nowrap;
 }
+
 .schedule-item.active {
     background: rgba(255, 255, 255, 0.1);
 }
@@ -303,11 +302,12 @@ SCHEDULE SECTION PUT STUFF HERE
 .schedule-item .event {
     font-size: 1.3rem;
     color: white;
-    flex-grow: 2;
+    flex: 1 1 auto;
     text-align: center;
-    display: inline-block;
-    padding: 0 60px; 
-    white-space: nowrap;
+    padding: 0 20px; 
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 .schedule-header {
@@ -331,20 +331,32 @@ SCHEDULE SECTION PUT STUFF HERE
     transform: rotate(45deg);
 }
 
+
+/* FIX SCHEUDLING ERRORRRRRRRRRRRRRRRRRRRRRRRRRRR */
 .details {
     display: none;
     margin-top: 10px;
-    overflow: hidden;
     background: linear-gradient(135deg, rgba(128, 0, 0, 0.1), rgba(40, 40, 40, 0.9));
-    padding: 10px;
-    border-radius: 5px;
+    padding: 20px;
+    /* border-radius: 5px; */
+    border-radius: 0 0 12px 12px;
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
     transition: max-height 0.5s ease-out, opacity 0.4s ease-in-out;
-    /* box-shadow: 0 0 10px rgba(255, 77, 77, 0.3); */
+    word-wrap: break-word;
+    white-space: normal;
 }
 
+.details p {
+    margin: 0.5rem 0;
+    white-space: normal;
+    word-break: break-word;
+}
+  
 .schedule-item.active .details {
     max-height: 300px; 
+    border-radius: 12px 12px 0 0;
     opacity: 1;
 }
 
@@ -368,6 +380,7 @@ SCHEDULE SECTION PUT STUFF HERE
     .schedule-item {
         flex-direction: column;
         text-align: center;
+        align-items: flex-start;
     }
     .schedule-item .event {
         padding: 10px;
@@ -378,7 +391,6 @@ SCHEDULE SECTION PUT STUFF HERE
 /* 
 
 FAQ SECTION GO HERE 
-<<<<<<< HEAD
 /* faq grid */
 
 #faq h2 {

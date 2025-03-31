@@ -284,7 +284,7 @@ const teamMembers = [
     },
     {
         realName: "Eduardo Morales",
-        specialty: "Web Design Co-Lead | Experience member",
+        specialty: "Web Design Co-Lead | Experience Member",
         status: "CAPTURED",
         image: "teamPhotos/eddie.JPG",
         threatLevel: 3
@@ -298,7 +298,7 @@ const teamMembers = [
     },
     {
         realName: "Kevin Palma",
-        specialty: "Outreach Co-Lead | Experience member",
+        specialty: "Outreach Co-Lead | Experience Member",
         status: "CAPTURED",
         image: "anonymous.jpg",
         threatLevel: 3
@@ -312,42 +312,42 @@ const teamMembers = [
     },
     {
         realName: "Aleena Mehmood",
-        specialty: "Web Design member",
+        specialty: "Web Design Member",
         status: "WANTED",
         image: "teamPhotos/aleena.JPG",
         threatLevel: 5
     },
     {
         realName: "Basil Tiongson",
-        specialty: "Web Design member",
+        specialty: "Web Design Member",
         status: "WANTED",
         image: "teamPhotos/basil.JPG",
         threatLevel: 4
     },
     {
         realName: "Jason Carmona",
-        specialty: "Outreach member",
+        specialty: "Outreach Member",
         status: "CAPTURED",
         image: "teamPhotos/jason.JPG",
         threatLevel: 3
     },
     {
         realName: "Malika Syeda",
-        specialty: "Logistics member",
+        specialty: "Logistics Member",
         status: "CAPTURED",
         image: "teamPhotos/malika.JPG",
         threatLevel: 3
     },
     {
         realName: "Eva Pisabaj",
-        specialty: "Logistics member",
+        specialty: "Logistics Member",
         status: "CAPTURED",
         image: "teamPhotos/eva.JPG",
         threatLevel: 3
     },
     {
         realName: "Manan",
-        specialty: "Web Development member",
+        specialty: "Web Design Member",
         status: "Wanted",
         image: "anonymous.jpg",
         threatLevel: 3
