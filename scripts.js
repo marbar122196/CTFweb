@@ -345,13 +345,6 @@ const teamMembers = [
         image: "teamPhotos/eva.JPG",
         threatLevel: 3
     },
-    {
-        realName: "Manan",
-        specialty: "Web Design Member",
-        status: "Wanted",
-        image: "anonymous.jpg",
-        threatLevel: 3
-    },
 ];
 
 
