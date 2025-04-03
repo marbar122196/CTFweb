@@ -259,28 +259,32 @@ const teamMembers = [
         specialty: "Director",
         status: "WANTED",
         image: "teamPhotos/brenda.JPG",
-        threatLevel: 5
+        threatLevel: 5,
+        linkedin: "https://www.linkedin.com/in/brleyva/"
     },
     {
         realName: "Coda Richmond",
         specialty: "Experience Lead | Logistics Co-Lead",
         status: "WANTED",
         image: "teamPhotos/coda.JPG",
-        threatLevel: 4
+        threatLevel: 4,
+        linkedin: "https://www.linkedin.com/in/coda-richmond"
     },
     {
         realName: "Julia Bowman",
         specialty: "Communications Lead",
         status: "CAPTURED",
         image: "teamPhotos/julia.JPG",
-        threatLevel: 3
+        threatLevel: 3,
+        linkedin: "https://www.linkedin.com/in/juliafbowman"
     },
     {
         realName: "Martha Barraza",
         specialty: "Web Design Co-Lead",
         status: "WANTED",
         image: "teamPhotos/martha.JPG",
-        threatLevel: 4
+        threatLevel: 4,
+        linkedin: "https://www.linkedin.com/in/martha-barraza"
     },
     {
         realName: "Eduardo Morales",
@@ -294,13 +298,14 @@ const teamMembers = [
         specialty: "Logistics Co-Lead",
         status: "Wanted",
         image: "teamPhotos/monsse.JPG",
-        threatLevel: 3
+        threatLevel: 3,
+        linkedin: "https://www.linkedin.com/in/monsbe2509/"
     },
     {
         realName: "Kevin Palma",
         specialty: "Outreach Co-Lead | Experience Member",
         status: "CAPTURED",
-        image: "anonymous.jpg",
+        image: "teamPhotos/kevin.jpg",
         threatLevel: 3
     },
     {
@@ -308,14 +313,16 @@ const teamMembers = [
         specialty: "Outreach Lead | Communications member",
         status: "Wanted",
         image: "teamPhotos/ciara.JPG",
-        threatLevel: 3
+        threatLevel: 3,
+        linkedin: "http://linkedin.com/in/ciara-taylor-6a6620230"
     },
     {
         realName: "Aleena Mehmood",
         specialty: "Web Design Member",
         status: "WANTED",
         image: "teamPhotos/aleena.JPG",
-        threatLevel: 5
+        threatLevel: 5,
+        linkedin: "https://www.linkedin.com/in/aleena-mehmood/"
     },
     {
         realName: "Basil Tiongson",
@@ -329,21 +336,24 @@ const teamMembers = [
         specialty: "Outreach Member",
         status: "CAPTURED",
         image: "teamPhotos/jason.JPG",
-        threatLevel: 3
+        threatLevel: 3,
+        linkedin: "https://www.linkedin.com/in/cs-jason-carmona/"
     },
     {
         realName: "Malika Syeda",
         specialty: "Logistics Member",
         status: "CAPTURED",
         image: "teamPhotos/malika.JPG",
-        threatLevel: 3
+        threatLevel: 3,
+        linkedin: "https://www.linkedin.com/in/malika-syeda-641300292/"
     },
     {
         realName: "Eva Pisabaj",
         specialty: "Logistics Member",
         status: "CAPTURED",
         image: "teamPhotos/eva.JPG",
-        threatLevel: 3
+        threatLevel: 3,
+        linkedin: "https://www.linkedin.com/in/evapisabaj"
     },
 ];
 
@@ -435,8 +445,15 @@ function loadTeamTable() {
         const cell = document.createElement("td");
         cell.classList.add("team-member-cell");
         
-        const memberCard = document.createElement("div");
+        const isLinked = !!member.linkedin;
+        const memberCard = document.createElement(isLinked ? "a" : "div");
         memberCard.classList.add("team-member");
+
+        if (isLinked) {
+            memberCard.href = member.linkedin;
+            memberCard.target = "_blank";
+            memberCard.rel = "noopener noreferrer";
+        }
         
         if (member.status === "CAPTURED") {
             memberCard.classList.add("captured");

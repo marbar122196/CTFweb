@@ -772,6 +772,9 @@ MEET THE TEAM SECTION GO HERE
 
 /*team member card styling */
 .team-member {
+    display: block;
+    text-decoration: none;
+    color: inherit;
     position: relative;
     background-color: #111;
     border: 1px solid #333;
@@ -780,7 +783,11 @@ MEET THE TEAM SECTION GO HERE
     transition: all 0.3s ease;
     height: 100%;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    cursor: default;
+}
+
+a.team-member {
+    cursor: pointer;
+    color: inherit;
 }
 
 .team-member:hover {
